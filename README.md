@@ -35,7 +35,7 @@ This difference algorithm is sensitive to word order changes and paraphrasing. T
 
     bundle exec rake similarity:tfidf
 
-Uses a [document-term matrix](http://en.wikipedia.org/wiki/Document-term_matrix) in which the values are tf*idf weights to calculate similarities. Uses our own [tf-idf-similarity](http://github.com/opennorth/tf-idf-similarity) gem.
+Uses a [document-term matrix](http://en.wikipedia.org/wiki/Document-term_matrix) in which the values are tf*idf weights to calculate similarities. Uses our own [tf-idf-similarity](http://github.com/opennorth/tf-idf-similarity) gem. Using [Okapi BM25](http://en.wikipedia.org/wiki/Okapi_BM25) gives similar results.
 
 #### Superfastmatch
 
