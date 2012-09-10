@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
+gem 'colored'
+gem 'diff_match_patch_native'
+gem 'gsl'
 gem 'nokogiri'
+gem 'rake'
+gem 'ruby-progressbar'
+gem 'tf-idf-similarity'
 gem 'unicode_utils'
