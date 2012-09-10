@@ -66,6 +66,9 @@ namespace :similarity do
     end
   end
 
+  # Diff only counts insertion and deletion operations. Damerau–Levenshtein
+  # distance also counts substitution and transposition. However, in our
+  # texts, the latter two operations are rare.
   desc 'Create a similarity matrix, using diff as the similarity measure'
   task :diff do
     require 'diff_match_patch_native'

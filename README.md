@@ -53,7 +53,7 @@ View a similarity matrix from the command-line, for example:
 
 ## See Also
 
-* [Gensim](http://radimrehurek.com/gensim/) (Python)
+Other similarity measures we can consider include [suffix tree similarity](http://www2007.org/papers/paper091.pdf). [Gensim](http://radimrehurek.com/gensim/) (Python) has algorithms for tf*idf, latent semantic indexing and [more](http://radimrehurek.com/gensim/tut2.html).
 
 ## Bugs? Questions?
 
