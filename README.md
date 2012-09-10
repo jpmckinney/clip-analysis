@@ -37,8 +37,6 @@ This difference algorithm is sensitive to word order changes and paraphrasing. T
 
 Uses a [document-term matrix](http://en.wikipedia.org/wiki/Document-term_matrix) in which the values are tf*idf weights to calculate similarities. Uses our own [tf-idf-similarity](http://github.com/opennorth/tf-idf-similarity) gem.
 
-The [treat](https://github.com/louismullie/treat), [tf-idf](https://github.com/reddavis/TF-IDF), [similarity](https://github.com/bbcrd/Similarity) and [rsimilarity](https://github.com/josephwilk/rsemantic) gems normalize the frequency of a term in a document to the number of terms in that document and have no normalization component. [vss](https://github.com/mkdynamic/vss) uses plain term and document frequencies.
-
 #### Superfastmatch
 
 Start Superfastmatch and load the licenses into it:
