@@ -6,7 +6,7 @@ require 'psych'
 require 'ruby-progressbar'
 
 # @todo The text in these documents could be cleaner. Go through the DOM,
-#   transforming the HTML to Markdown?
+#   transforming the HTML to Markdown? https://github.com/29decibel/html2markdown
 desc 'Download all Canadian licenses from CLIP'
 task :download do
   require 'fileutils'
@@ -161,7 +161,20 @@ namespace :visualize do
   # http://en.wikipedia.org/wiki/Hierarchical_clustering
   desc 'Draw a dendrogram with D3'
   task :dendrogram, :file do |t,args|
-    # @todo
+    require 'rbcluster'
+
+    data = []
+    Psych.load(File.read(args[:file])).each do |id,row|
+      data << row.values
+    end
+
+    # http://bonsai.hgc.jp/~mdehoon/software/cluster/cluster.pdf
+    # @todo rbcluster doesn't implement passing distancematrix as an option.
+    tree = Cluster.treecluster([[]], distancematrix: data)
+    tree.scale
+
+    # @todo Transform the output into a dendrogram using D3
+    # https://github.com/mbostock/d3/wiki/Cluster-Layout
   end
 
   # http://en.wikipedia.org/wiki/Dendrogram
