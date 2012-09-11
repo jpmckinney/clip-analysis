@@ -49,11 +49,18 @@ Start Superfastmatch and load the licenses into it:
 
 View a similarity matrix from the command-line, for example:
 
-    bundle exec rake print[similarity-diff.yml]
+    bundle exec rake visualize:print[similarity-diff.yml]
+
+Or as a dendrogram:
+
+    bundle exec rake visualize:dendrogram[similarity-diff.yml]
+    open dendrogram.html
 
 ## See Also
 
 Other similarity measures we can consider include [suffix tree similarity](http://www2007.org/papers/paper091.pdf). [Gensim](http://radimrehurek.com/gensim/) (Python) has algorithms for tf*idf, latent semantic indexing and [more](http://radimrehurek.com/gensim/tut2.html).
+
+[Ai4r](http://ai4r.org/) has a single linkage clusterer, but it requires the number of clusters as input.
 
 ## Bugs? Questions?
 

@@ -5,6 +5,8 @@ require 'bundler/setup'
 require 'psych'
 require 'ruby-progressbar'
 
+# @todo The text in these documents could be cleaner. Go through the DOM,
+#   transforming the HTML to Markdown?
 desc 'Download all Canadian licenses from CLIP'
 task :download do
   require 'fileutils'
@@ -126,30 +128,46 @@ namespace :similarity do
   end
 end
 
-desc 'Print a similarity matrix'
-task :print, :file do |t,args|
-  require 'colored'
+namespace :visualize do
+  desc 'Print a similarity matrix'
+  task :print, :file do |t,args|
+    require 'colored'
 
-  Psych.load(File.read(args[:file])).sort_by{|k,_| k}.each_with_index do |(id,row),index|
-    row = row.sort_by{|k,_| k}
+    Psych.load(File.read(args[:file])).sort_by{|k,_| k}.each_with_index do |(id,row),index|
+      row = row.sort_by{|k,_| k}
 
-    if index == 0
-      print ' ' * 16
-      row.each do |k,_|
-        print k.split('-')[1][0..2].ljust(4)
+      if index == 0
+        print ' ' * 16
+        row.each do |k,_|
+          print k.split('-')[1][0..2].ljust(4)
+        end
+        puts
+      end
+
+      print id.ljust(15)
+      row.each do |_,value|
+        string = ('%d' % (value * 100)).rjust(4)
+        if value > 0.7
+          print string.green
+        else
+          print string
+        end
       end
       puts
     end
+  end
 
-    print id.ljust(15)
-    row.each do |_,value|
-      string = ('%d' % (value * 100)).rjust(4)
-      if value > 0.7
-        print string.green
-      else
-        print string
-      end
-    end
-    puts
+  # http://en.wikipedia.org/wiki/Dendrogram
+  # http://en.wikipedia.org/wiki/Hierarchical_clustering
+  desc 'Draw a dendrogram with D3'
+  task :dendrogram, :file do |t,args|
+    # @todo
+  end
+
+  # http://en.wikipedia.org/wiki/Dendrogram
+  # http://en.wikipedia.org/wiki/Hierarchical_clustering
+  desc 'Build an HTML interface for comparing documents'
+  task :diff, :file do |t,args|
+    # @todo
   end
 end
