@@ -35,7 +35,7 @@ This difference algorithm is sensitive to word order changes and paraphrasing. T
 
     bundle exec rake similarity:tfidf
 
-Uses a [document-term matrix](http://en.wikipedia.org/wiki/Document-term_matrix) in which the values are tf*idf weights to calculate similarities. Uses our own [tf-idf-similarity](http://github.com/opennorth/tf-idf-similarity) gem. Using [Okapi BM25](http://en.wikipedia.org/wiki/Okapi_BM25) gives similar results.
+Uses a [document-term matrix](http://en.wikipedia.org/wiki/Document-term_matrix) in which the values are tf*idf weights to calculate similarities. Using [Okapi BM25](http://en.wikipedia.org/wiki/Okapi_BM25) gives similar results.
 
 #### Superfastmatch
 
@@ -62,8 +62,4 @@ Other similarity measures we can consider include [suffix tree similarity](http:
 
 [Ai4r](http://ai4r.org/) has a single linkage clusterer, but it requires the number of clusters as input.
 
-## Bugs? Questions?
-
-The main repository is on GitHub: [http://github.com/opennorth/canadian-open-data-licenses](http://github.com/opennorth/canadian-open-data-licenses), where your contributions, forks, bug reports, feature requests, and feedback are greatly welcomed.
-
-Copyright (c) 2012 Open North Inc., released under the MIT license
+Copyright (c) 2012 James McKinney, released under the MIT license
