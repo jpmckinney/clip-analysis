@@ -4,12 +4,12 @@ GEM
     colored (1.2)
     diff_match_patch_native (1.0.2)
       rice (>= 1.4.2)
-    gsl (1.14.7)
-      narray (>= 0.5.9)
-    narray (0.6.0.1)
-    nokogiri (1.5.5)
+    gsl (2.1.0.1)
+    mini_portile2 (2.1.0)
+    nokogiri (1.7.0.1)
+      mini_portile2 (~> 2.1.0)
     rake (0.9.2.2)
-    rice (1.4.3)
+    rice (2.1.1)
     ruby-progressbar (1.0.1)
     tf-idf-similarity (0.0.2)
       unicode_utils
@@ -27,3 +27,6 @@ DEPENDENCIES
   ruby-progressbar
   tf-idf-similarity
   unicode_utils
+
+BUNDLED WITH
+   1.11.2
